@@ -9,8 +9,8 @@
 <script setup>
 import { generateCodeChallenge, generateCodeVerifier } from '@/utils/pkce'
 
-const clientId = 'b5e1bd60680a4eeb8a0c0294a37d94b1'
-const redirectUri = 'http://127.0.0.1:8000/callback'
+const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID
+const redirectUri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI
 
 async function loginWithSpotify() {
   const verifier = generateCodeVerifier()

@@ -21,8 +21,10 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const token = ref('')
+const router = useRouter()
 
 onMounted(async () => {
   const code = new URLSearchParams(window.location.search).get('code')
@@ -38,15 +40,25 @@ onMounted(async () => {
     code_verifier: verifier,
   })
 
-  const res = await fetch('https://accounts.spotify.com/api/token', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body,
-  })
+  try {
+    const res = await fetch('https://accounts.spotify.com/api/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    })
 
-  const data = await res.json()
-  token.value = data.access_token
-  localStorage.setItem('spotify_token', token.value)
+    const data = await res.json()
+    token.value = data.access_token
+    localStorage.setItem('spotify_token', token.value)
+
+    if (token.value) {
+      setTimeout(() => {
+        router.push('/')
+      }, 1000)
+    }
+  } catch (error) {
+    console.error('Token exchange failed:', error)
+  }
 })
 </script>
 

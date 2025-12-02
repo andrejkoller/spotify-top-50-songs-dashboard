@@ -8,15 +8,14 @@ import nightwatchPlugin from 'vite-plugin-nightwatch'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueJsx(),
-    vueDevTools(),
-    nightwatchPlugin(),
-  ],
+  plugins: [vue(), vueJsx(), vueDevTools(), nightwatchPlugin()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+  },
+  server: {
+    port: 8000,
+    host: '127.0.0.1',
   },
 })
