@@ -87,7 +87,7 @@ export default {
   padding: 0;
   margin: 0;
   width: 100%;
-  gap: 2em;
+  gap: 1rem;
 }
 
 .navigation-container .navigation-content .navigation-body .navigation-links ul li .dashboard-btn {
@@ -105,6 +105,6 @@ export default {
 .navigation-container .navigation-content .navigation-body .navigation-links ul li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 0.875rem;
 }
 </style>

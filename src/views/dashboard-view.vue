@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import Searchbar from '@/components/Searchbar.vue'
-import SongCard from '@/components/SongCard.vue'
-import { fetchTopTracks } from '@/services/spotifyService'
+import Searchbar from '@/components/searchbar.vue'
+import SongCard from '@/components/song-card.vue'
+import { fetchTopTracks } from '@/services/spotify-service'
 
 export default {
   components: {
