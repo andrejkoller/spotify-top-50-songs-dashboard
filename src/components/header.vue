@@ -76,7 +76,7 @@ ul.navigation-list .navigation-item a {
   font-weight: 600;
 }
 
-@media (min-width: 425px) {
+@media (max-width: 425px) {
   .header-title {
     font-size: 1.5em;
   }
