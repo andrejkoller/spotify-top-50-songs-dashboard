@@ -1,8 +1,7 @@
 <template>
-  <div class="login-container">
-    <div class="login-content">
-      <v-btn variant="elevated" rounded @click="loginWithSpotify">Login with Spotify</v-btn>
-    </div>
+  <div class="login">
+    <h1 class="login-title">Welcome<br /> back</h1>
+    <v-btn variant="elevated" rounded @click="loginWithSpotify">Continue</v-btn>
   </div>
 </template>
 
@@ -35,16 +34,7 @@ async function loginWithSpotify() {
 
 <style>
 @media (min-width: 1024px) {
-  .login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-  }
-
-  .login-container .login-content {
+  .login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,14 +42,23 @@ async function loginWithSpotify() {
     width: 100%;
   }
 
-  .login-container .login-content .v-btn {
-    background-color: #1ed65e;
-    color: white;
-    transition: background-color 0.3s ease;
+  .login-title {
+    font-size: 3em;
+    font-weight: 800;
+    text-align: center;
+    margin: 2rem 0;
   }
 
-  .login-container .login-content .v-btn:hover {
-    background-color: #1db954;
+  .v-btn {
+    background-color: #1ed760;
+    color: #000000;
+    padding: 8px 24px;
+    font-weight: 600;
+  }
+
+  .v-btn:hover {
+    transform: scale(1.04);
+    transition: transform 0.2s ease;
   }
 }
 </style>

@@ -1,34 +1,22 @@
 <template>
-  <div class="song-card-container" @click="() => navigateToTrack(track)">
-    <div class="song-card-content">
-      <v-card variant="outlined" class="song-card">
-        <div class="song-card-wrapper">
-          <div class="song-card-index">
-            <p>{{ index + 1 }}</p>
-          </div>
-          <div class="song-card-image">
-            <v-img :src="track.album.images[0].url" height="200" width="200"></v-img>
-          </div>
-        </div>
-        <div class="song-card-title">
-          <div class="song-card-title-album">
-            <v-card-title>{{ track.name }}</v-card-title>
-            <p>{{ track.album.name }}</p>
-          </div>
-          <div class="song-card-title-artist">
-            <v-card-subtitle>{{ track.artists[0].name }}</v-card-subtitle>
-          </div>
-        </div>
-        <div class="song-card-duration">
-          <v-card-text>
-            <span>{{ (track.duration_ms / 60000).toFixed(2).charAt(0) }}</span>
-            <span>:</span>
-            <span>{{ (track.duration_ms / 60000).toFixed(2).slice(2, 4) }}</span>
-          </v-card-text>
-        </div>
-      </v-card>
+  <v-card class="song-card" variant="outlined" @click="() => navigateToTrack(track)">
+    <div class="song-card-wrapper">
+      <p class="song-card-index">{{ index + 1 }}</p>
+        <v-img class="song-card-image" :src="track.album.images[0].url" height="200" width="200"></v-img>
     </div>
-  </div>
+    <div class="song-card-title">
+      <v-card-title>{{ track.name }}</v-card-title>
+      <p>{{ track.album.name }}</p>
+      <v-card-subtitle>{{ track.artists[0].name }}</v-card-subtitle>
+    </div>
+    <div class="song-card-duration">
+      <v-card-text>
+        <span>{{ (track.duration_ms / 60000).toFixed(2).charAt(0) }}</span>
+        <span>:</span>
+        <span>{{ (track.duration_ms / 60000).toFixed(2).slice(2, 4) }}</span>
+      </v-card-text>
+    </div>
+  </v-card>
 </template>
 
 <script setup>
@@ -43,50 +31,43 @@ function navigateToTrack(track) {
 </script>
 
 <style scoped>
-.song-card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.song-card-container .song-card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.song-card-container .song-card-content .song-card {
+.song-card {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1vw;
-  gap: 2em;
-  height: 100%;
+  padding: 2rem;
+  gap: 1.5em;
   width: 100%;
-  border-color: #616161;
+  border-color: #7c7c7c;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.song-card-container .song-card-content .song-card:hover {
+.song-card:hover {
   border-color: #ffffff;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
-.song-card-container .song-card-content .song-card .song-card-wrapper {
+.song-card .song-card-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1.5em;
 }
 
-.song-card-container .song-card-content .song-card .song-card-title {
+.song-card .song-card-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
   width: 100%;
+}
+
+.song-card-title p {
+  margin: 0;
 }
 
 .v-card-title {
@@ -95,5 +76,6 @@ function navigateToTrack(track) {
 
 .v-card-subtitle {
   padding: 0;
+  color: #b3b3b3;
 }
 </style>

@@ -1,17 +1,28 @@
 <script setup>
-import { computed } from 'vue'
-import Navigation from './components/Navigation.vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-const hideHeader = computed(() => route.path === '/login' || route.path === '/callback')
+import Header from './components/header.vue'
 </script>
 
 <template>
-  <header v-if="!hideHeader">
-    <Navigation />
-  </header>
-  <router-view />
+  <div class="wrapper">
+    <Header />
+    <main class="main">
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+</style>
