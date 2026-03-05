@@ -2,7 +2,12 @@
   <v-card class="song-card" variant="outlined" @click="() => navigateToTrack(track)">
     <div class="song-card-wrapper">
       <p class="song-card-index">{{ index + 1 }}</p>
-        <v-img class="song-card-image" :src="track.album.images[0].url" height="200" width="200"></v-img>
+      <v-img
+        class="song-card-image"
+        :src="track.album.images[0].url"
+        height="200"
+        width="200"
+      ></v-img>
     </div>
     <div class="song-card-title">
       <v-card-title>{{ track.name }}</v-card-title>
@@ -77,5 +82,29 @@ function navigateToTrack(track) {
 .v-card-subtitle {
   padding: 0;
   color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .song-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .song-card .song-card-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .song-card .song-card-title {
+    align-items: center;
+    gap: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .v-card .v-card-title {
+    font-size: 1rem;
+  }
 }
 </style>

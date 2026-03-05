@@ -20,12 +20,7 @@ input {
   padding: 0;
 }
 
-@media (min-width: 1024px) {
-  header {
-    width: 100%;
-    max-width: 1024px;
-  }
-
+@media (max-width: 1024px) {
   #app {
     display: flex;
     flex-direction: column;
@@ -33,6 +28,6 @@ input {
     align-items: center;
     height: 100vh;
     width: 100%;
-    padding: 0;
+    padding: 0 1.375rem;
   }
 }

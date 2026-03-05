@@ -75,4 +75,22 @@ ul.navigation-list .navigation-item a {
   color: inherit;
   font-weight: 600;
 }
+
+@media (min-width: 425px) {
+  .header-title {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-title {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 320px) {
+  .header-title {
+    font-size: 1em;
+  }
+}
 </style>

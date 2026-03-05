@@ -2,13 +2,19 @@
   <div class="callback">
     <div class="auth-details">
       <div class="auth-success" v-if="token">
-        <h2 class="auth-title">Authentication<br /> successful</h2>
+        <h2 class="auth-title">
+          Authentication<br />
+          successful
+        </h2>
         <v-btn variant="elevated" rounded>
           <router-link class="auth-link-text" to="/">Redirect</router-link>
         </v-btn>
       </div>
       <div class="auth-failure" v-else>
-        <h2 class="auth-title">Authentication<br /> failed</h2>
+        <h2 class="auth-title">
+          Authentication<br />
+          failed
+        </h2>
         <v-btn variant="elevated" rounded>
           <router-link class="auth-link-text" to="/login">Try Again</router-link>
         </v-btn>
@@ -60,7 +66,7 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped>
+<style>
 .callback {
   display: flex;
   flex-direction: column;
@@ -108,5 +114,11 @@ onMounted(async () => {
 .auth-link-text {
   color: inherit;
   font-weight: 600;
+}
+
+@media (max-width: 425px) {
+  .auth-title {
+    font-size: 2rem;
+  }
 }
 </style>
