@@ -1,6 +1,9 @@
 <template>
   <div class="login">
-    <h1 class="login-title">Welcome<br /> back</h1>
+    <h1 class="login-title">
+      Welcome<br />
+      back
+    </h1>
     <v-btn variant="elevated" rounded @click="loginWithSpotify">Continue</v-btn>
   </div>
 </template>
@@ -33,32 +36,36 @@ async function loginWithSpotify() {
 </script>
 
 <style>
-@media (min-width: 1024px) {
-  .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
+.login-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.v-btn {
+  background-color: #1ed760;
+  color: #000000;
+  padding: 8px 24px;
+  font-weight: 600;
+}
+
+.v-btn:hover {
+  transform: scale(1.04);
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 425px) {
   .login-title {
-    font-size: 3em;
-    font-weight: 800;
-    text-align: center;
-    margin: 2rem 0;
-  }
-
-  .v-btn {
-    background-color: #1ed760;
-    color: #000000;
-    padding: 8px 24px;
-    font-weight: 600;
-  }
-
-  .v-btn:hover {
-    transform: scale(1.04);
-    transition: transform 0.2s ease;
+    font-size: 2rem;
   }
 }
 </style>
