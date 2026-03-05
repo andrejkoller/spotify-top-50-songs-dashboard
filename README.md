@@ -13,15 +13,15 @@ A modern Vue 3 web application that displays your Spotify Top 50 tracks. Authent
 
 ## 🛠️ Technologies Used
 
-- [Vue 3](https://vuejs.org/) - Progressive JavaScript framework with Composition API
-- [Vite](https://vite.dev/) - Next generation frontend build tool
-- [Vue Router](https://router.vuejs.org/) - Official routing library for Vue.js
-- [Pinia](https://pinia.vuejs.org/) - Intuitive state management
-- [Vuetify](https://vuetifyjs.com/) - Material Design component framework
-- [Vitest](https://vitest.dev/) - Blazing fast unit testing framework
-- [Nightwatch](https://nightwatchjs.org/) - End-to-end testing solution
-- [ESLint](https://eslint.org/) - Code linting and quality
-- [Prettier](https://prettier.io/) - Opinionated code formatting
+- Vue 3 - Progressive JavaScript framework with Composition API
+- Vite - Next generation frontend build tool
+- Vue Router - Official routing library for Vue.js
+- Pinia - Intuitive state management
+- Vuetify - Material Design component framework
+- Vitest - Blazing fast unit testing framework
+- Nightwatch - End-to-end testing solution
+- ESLint - Code linting and quality
+- Prettier - Opinionated code formatting
 
 ## 📋 Prerequisites
 
