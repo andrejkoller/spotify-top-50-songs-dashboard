@@ -4,17 +4,24 @@
       label="Search for a track, artist, or album"
       placeholder="Type to search..."
       variant="outlined"
-      prepend-inner-icon="mdi-magnify"
       v-model="searchQuery"
       @input="filterTracks"
       clearable
-    />
+    >
+      <template #prepend-inner>
+        <SearchIcon :size="20" />
+      </template>
+    </v-text-field>
   </div>
 </template>
 
 <script>
+import { SearchIcon } from 'lucide-vue-next'
 export default {
   name: 'AppSearchbar',
+  components: {
+    SearchIcon,
+  },
   props: {
     tracks: {
       type: Array,
