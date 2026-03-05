@@ -68,7 +68,7 @@ npm run dev
 The app will be available at `http://localhost:5173`
 
 ## 📸 Screenshots
-<img width="1920" height="1080" alt="Screenshot 1" src="https://github.com/user-attachments/assets/d09ebe79-1e59-4923-bb9d-417643ab5a49" />
-<img width="1920" height="1080" alt="Screenshot 2" src="https://github.com/user-attachments/assets/e39beb56-8dc4-43e2-a0ea-445798901292" />
-<img width="1920" height="1080" alt="Screenshot 3" src="https://github.com/user-attachments/assets/4e091105-e5d8-499a-8491-cc222259f0df" />
-<img width="1920" height="1080" alt="Screenshot 4" src="https://github.com/user-attachments/assets/373e7eb6-ef4c-4a3d-9087-12d026df514f" />
+
+<img width="1920" height="1084" alt="Screenshot 1" src="https://github.com/user-attachments/assets/f0905a10-0844-4a4d-b915-25eca5f734b7" />
+<img width="1920" height="1084" alt="Screenshot 2" src="https://github.com/user-attachments/assets/1d45090d-f8b8-40c4-8d57-d16e56827d58" />
+<img width="1920" height="1084" alt="Screenshot 3" src="https://github.com/user-attachments/assets/29b62007-1188-45d7-9e7b-092f66dc6b76" />
