@@ -1,16 +1,14 @@
 <template>
-  <div class="searchbar-container">
-    <div class="searchbar-content">
-      <v-text-field
-        label="Search"
-        variant="outlined"
-        prepend-inner-icon="mdi-magnify"
-        v-model="searchQuery"
-        :placeholder="'Search for tracks or artists...'"
-        @input="filterTracks"
-        clearable
-      ></v-text-field>
-    </div>
+  <div class="searchbar">
+    <v-text-field
+      label="Search for a track, artist, or album"
+      placeholder="Type to search..."
+      variant="outlined"
+      prepend-inner-icon="mdi-magnify"
+      v-model="searchQuery"
+      @input="filterTracks"
+      clearable
+    />
   </div>
 </template>
 
@@ -43,17 +41,8 @@ export default {
 </script>
 
 <style scoped>
-.searchbar-container {
+.searchbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.searchbar-container .searchbar-content {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;

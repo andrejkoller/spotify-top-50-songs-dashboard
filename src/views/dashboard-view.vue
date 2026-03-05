@@ -1,30 +1,23 @@
 <template>
-  <main class="dashboard">
-    <div class="dashboard-header">
-      <Searchbar :tracks="tracks" @search="handleSearch" />
+  <div class="dashboard">
+    <Searchbar :tracks="tracks" @search="handleSearch" />
+    <div class="spotify-top-tracks" v-if="filteredTracks.length > 0">
+      <SongCard
+        class="song-card-track"
+        v-for="(track, index) in filteredTracks"
+        :key="index"
+        :track="track"
+        :index="index"
+      />
     </div>
-    <div class="dashboard-container">
-      <div class="dashboard-content">
-        <div class="spotify-top-tracks" v-if="filteredTracks.length > 0">
-          <SongCard
-            v-for="(track, index) in filteredTracks"
-            :key="index"
-            :track="track"
-            :index="index"
-          />
-        </div>
-        <div class="spotify-notification" v-else>
-          <p>
-            No tracks found. Please try a different search term or check your Spotify access token.
-          </p>
-        </div>
-      </div>
-    </div>
-  </main>
+    <p class="notification-message" v-else>
+      No tracks found. Please try a different search term or check your Spotify access token.
+    </p>
+  </div>
 </template>
 
 <script>
-import Searchbar from '@/components/searchbar.vue'
+import Searchbar from '@/components/searchbar.vue';
 import SongCard from '@/components/song-card.vue'
 import { fetchTopTracks } from '@/services/spotify-service'
 
@@ -67,10 +60,9 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin-top: 100px;
 }
 
-.dashboard .dashboard-container {
+.spotify-top-tracks {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,21 +70,14 @@ export default {
   width: 100%;
 }
 
-.dashboard .dashboard-container .dashboard-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2em;
+.song-card-track {
+  margin-bottom: 1.375rem;
 }
 
-.dashboard .dashboard-container .dashboard-content .spotify-top-tracks {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 2em;
+.notification-message {
+  font-size: 1em;
+  color: #b3b3b3;
+  margin: 1rem 0;
+  text-align: center;
 }
 </style>
