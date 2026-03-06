@@ -1,27 +1,27 @@
 ## Short description
 
-A modern Vue 3 web application that displays your Spotify Top 50 tracks. Authenticate with your Spotify account, search your top tracks, and view details in a clean, responsive dashboard UI.
+A modern Vue web application that displays your Spotify Top 50 tracks. Authenticate with your Spotify account, search your top tracks, and view details in a clean, responsive dashboard UI.
 
 ## ✨ Features
 
-- Spotify OAuth2 Authentication - Secure login using PKCE flow (no client secret required)
-- Top 50 Tracks Display - View your most listened to tracks
-- Real-time Search - Filter tracks by name, artist, or album
-- Modern UI - Beautiful, responsive interface built with Vuetify
-- Direct Spotify Integration - Click any song to open it directly in Spotify
-- Fast & Lightweight - Built with Vite for optimal performance
+- **Spotify OAuth2 Authentication** - Secure login using PKCE flow (no client secret required)
+- **Top 50 Tracks Display** - View your most listened to tracks
+- **Real-time Search** - Filter tracks by name, artist, or album
+- **Modern UI** - Beautiful, responsive interface built with Vuetify
+- **Direct Spotify Integration** - Click any song to open it directly in Spotify
+- **Fast & Lightweight** - Built with Vite for optimal performance
 
 ## 🛠️ Technologies Used
 
-- Vue 3 - Progressive JavaScript framework with Composition API
-- Vite - Next generation frontend build tool
-- Vue Router - Official routing library for Vue.js
-- Pinia - Intuitive state management
-- Vuetify - Material Design component framework
-- Vitest - Blazing fast unit testing framework
-- Nightwatch - End-to-end testing solution
-- ESLint - Code linting and quality
-- Prettier - Opinionated code formatting
+- **Vue** - Progressive JavaScript framework with Composition API
+- **Vite** - Next generation frontend build tool
+- **Vue Router** - Official routing library for Vue.js
+- **Pinia** - Intuitive state management
+- **Vuetify** - Material Design component framework
+- **Vitest** - Blazing fast unit testing framework
+- **Nightwatch** - End-to-end testing solution
+- **ESLint** - Code linting and quality
+- **Prettier** - Opinionated code formatting
 
 ## 📋 Prerequisites
 
