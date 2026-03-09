@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Searchbar from '@/components/searchbar.vue';
+import Searchbar from '@/components/searchbar.vue'
 import SongCard from '@/components/song-card.vue'
 import { fetchTopTracks } from '@/services/spotify-service'
 
@@ -33,17 +33,18 @@ export default {
     }
   },
   async mounted() {
-    const token = localStorage.getItem('spotify_token')
-    if (token) {
-      const data = await fetchTopTracks(token)
-      if (data) {
-        this.tracks = data.items
-        this.filteredTracks = data.items
-      } else {
-        console.error('Failed to fetch top tracks')
-      }
+    const token = localStorage.getItem('spotify_access_token')
+    if (!token) {
+      console.error('No access token found in local storage. Redirecting to login.')
+      this.$router.push('/login')
+      return
+    }
+    const data = await fetchTopTracks(token)
+    if (data) {
+      this.tracks = data.items
+      this.filteredTracks = data.items
     } else {
-      console.error('No access token found in local storage')
+      console.error('Failed to fetch top tracks from Spotify API')
     }
   },
   methods: {
