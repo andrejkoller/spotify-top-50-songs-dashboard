@@ -18,7 +18,7 @@ async function loginWithSpotify() {
   const verifier = generateCodeVerifier()
   const challenge = await generateCodeChallenge(verifier)
 
-  localStorage.setItem('verifier', verifier)
+  localStorage.setItem('spotify_code_verifier', verifier)
 
   const scope = ['user-top-read', 'user-read-private', 'user-read-email'].join(' ')
 

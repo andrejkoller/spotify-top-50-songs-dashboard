@@ -32,7 +32,7 @@ const router = useRouter()
 
 onMounted(async () => {
   const code = new URLSearchParams(window.location.search).get('code')
-  const verifier = localStorage.getItem('verifier')
+  const verifier = localStorage.getItem('spotify_code_verifier')
 
   if (!code || !verifier) return
 
@@ -51,9 +51,19 @@ onMounted(async () => {
       body,
     })
 
+    if (!res.ok) {
+      throw new Error('Token exchange failed')
+    }
+
     const data = await res.json()
+
     token.value = data.access_token
-    localStorage.setItem('spotify_token', token.value)
+
+    localStorage.setItem('spotify_access_token', data.access_token)
+    localStorage.setItem('spotify_refresh_token', data.refresh_token)
+
+    const expiry = Date.now() + data.expires_in * 1000
+    localStorage.setItem('spotify_token_expiry', expiry.toString())
 
     if (token.value) {
       setTimeout(() => {
