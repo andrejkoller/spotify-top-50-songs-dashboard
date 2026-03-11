@@ -65,7 +65,7 @@ VITE_SPOTIFY_REDIRECT_URI=http://127.0.0.1:8000/callback
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+The app will be available at `http://127.0.0.1:8000`
 
 ## 📸 Screenshots
 
