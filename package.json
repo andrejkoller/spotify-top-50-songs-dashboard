@@ -28,7 +28,7 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
     "chromedriver": "^146.0.0",
-    "eslint": "^10.0.2",
+    "eslint": "^10.0.3",
     "eslint-plugin-vue": "^10.8.0",
     "geckodriver": "^6.1.0",
     "globals": "^17.4.0",
